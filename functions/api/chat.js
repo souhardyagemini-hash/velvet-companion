@@ -70,11 +70,46 @@ export async function onRequestPost({ request, env }) {
     return Response.json({ error: "Unexpected server error." }, { status: 500 });
   }
 }
+
 export async function onRequestGet({ env }) {
-  return Response.json({
-    ok: true,
-    function: "Velvet chat API",
-    keyConfigured: Boolean(env.OPENROUTER_API_KEY),
-    model: env.AI_MODEL || "openrouter/free"
-  });
+  if (!env.OPENROUTER_API_KEY) {
+    return Response.json({ ok: false, error: "API key missing" });
+  }
+
+  try {
+    const response = await fetch(
+      "https://openrouter.ai/api/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${env.OPENROUTER_API_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          model: "openrouter/free",
+          messages: [
+            { role: "user", content: "Reply with exactly: Velvet is connected!" }
+          ],
+          max_tokens: 30
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return Response.json({
+        ok: false,
+        providerStatus: response.status,
+        error: data.error?.message || "Provider request failed"
+      });
+    }
+
+    return Response.json({
+      ok: true,
+      reply: data.choices?.[0]?.message?.content || "Empty reply"
+    });
+  } catch {
+    return Response.json({ ok: false, error: "Network or server error" });
+  }
 }
