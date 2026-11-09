@@ -105,10 +105,22 @@ export async function onRequestGet({ env }) {
       });
     }
 
+    
     return Response.json({
       ok: true,
-      reply: data.choices?.[0]?.message?.content || "Empty reply"
+      model: data.model || null,
+      responseKeys: Object.keys(data),
+      error: data.error || null,
+      choicesCount: data.choices?.length || 0,
+      firstChoice: data.choices?.[0] ? {
+        keys: Object.keys(data.choices[0]),
+        finishReason: data.choices[0].finish_reason || null,
+        messageKeys: Object.keys(data.choices[0].message || {}),
+        contentType: typeof data.choices[0].message?.content,
+        content: data.choices[0].message?.content ?? null
+      } : null
     });
+
   } catch {
     return Response.json({ ok: false, error: "Network or server error" });
   }
