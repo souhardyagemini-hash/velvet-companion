@@ -44,7 +44,7 @@ export async function onRequestPost({ request, env }) {
         model: env.AI_MODEL || "openrouter/free",
         messages: [{ role: "system", content: character }, ...messages],
         temperature: 0.85,
-        max_tokens: 220
+        max_tokens: 800
       })
     });
 
@@ -90,7 +90,7 @@ export async function onRequestGet({ env }) {
           messages: [
             { role: "user", content: "Reply with exactly: Velvet is connected!" }
           ],
-          max_tokens: 30
+          max_tokens: 800
         })
       }
     );
