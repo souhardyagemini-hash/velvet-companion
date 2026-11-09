@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100b19">
+  <meta name="description" content="Meet fictional AI companions for warm, playful and romantic conversations.">
+  <title>Velvet — Your world of connection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div id="ageGate" class="gate">
+    <div class="gate-card">
+      <div class="brand-mark">V<span>·</span></div>
+      <p class="eyebrow">A PRIVATE LITTLE UNIVERSE</p>
+      <h1>Welcome to <em>Velvet.</em></h1>
+      <p class="muted">A fictional companion experience for adults. All characters are imaginary adults aged 21 or older. Conversations are AI-generated and are not messages from real people.</p>
+      <button id="enterBtn" class="button button-primary full">I am 18 or older — enter</button>
+      <p class="tiny muted">By entering, you confirm that you are at least 18 and agree to use the experience respectfully.</p>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Velvet home"><span class="brand-mark small">V<span>·</span></span><span>velvet</span></a>
+    <nav><a href="#companions">Companions</a><a href="#about">About</a></nav>
+    <button class="button button-ghost" id="mobileChatLink">Your chats <span class="online-dot"></span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="sparkle">✦</span> CONNECTION, WITH A LITTLE MAGIC</p>
+        <h1>Someone lovely<br>to <em>talk to.</em></h1>
+        <p class="hero-text">Meet your new favourite conversation. Five fictional personalities, thoughtful replies, and a space that feels like yours.</p>
+        <a class="button button-primary" href="#companions">Meet the companions <span>↗</span></a>
+        <div class="hero-note"><span class="online-dot"></span> Made for late-night conversations</div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-monogram">V</div>
+        <div class="floating-note note-top">✧ &nbsp; a little spark</div>
+        <div class="floating-note note-bottom">your story starts here&nbsp; ♡</div>
+      </div>
+    </section>
+
+    <section class="ad-slot" aria-label="Advertisement placement">
+      <span class="ad-label">ADVERTISEMENT</span>
+      <div class="ad-placeholder"><span>✧</span><div><strong>Your banner can live here</strong><small>Ad space is a placeholder until an ad network approves this site.</small></div></div>
+    </section>
+
+    <section id="companions" class="companions-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">FIND YOUR KIND OF CONNECTION</p><h2>Meet the <em>companions.</em></h2></div>
+        <p class="muted heading-aside">Every personality has a different kind of warmth.</p>
+      </div>
+      <div id="characterGrid" class="character-grid"></div>
+    </section>
+
+    <section class="chat-section" id="chat">
+      <div class="chat-intro">
+        <p class="eyebrow">A MOMENT JUST FOR YOU</p>
+        <h2>Your conversation<br><em>begins here.</em></h2>
+        <p class="muted">Choose a companion above to open a private chat. The demo works locally; connect an AI key using the beginner guide to enable generated replies.</p>
+        <div class="privacy-note"><span>◇</span> Be kind. Don't share passwords, financial details, or sensitive personal information.</div>
+      </div>
+      <div class="chat-card">
+        <div class="chat-head">
+          <div class="avatar avatar-mini" id="chatAvatar">V</div>
+          <div class="chat-person"><strong id="chatName">Choose a companion</strong><small id="chatMood">Your next lovely conversation awaits</small></div>
+          <span class="chat-status"><i></i> <span id="connectionStatus">Demo mode</span></span>
+        </div>
+        <div id="messages" class="messages" aria-live="polite">
+          <div class="empty-chat"><div class="empty-heart">♡</div><strong>A little space for connection.</strong><p>Choose one of the companions to get started.</p></div>
+        </div>
+        <div class="suggestions" id="suggestions">
+          <button>Tell me about your day</button><button>Make me smile</button><button>What are you dreaming of?</button>
+        </div>
+        <form id="chatForm" class="chat-compose">
+          <input id="messageInput" autocomplete="off" maxlength="1200" placeholder="Choose a companion first…" aria-label="Write a message" disabled>
+          <button class="send-button" type="submit" aria-label="Send message" disabled>↑</button>
+        </form>
+        <p class="chat-disclaimer">AI-generated fictional conversation. Replies may be inaccurate. Not a human or a substitute for professional support.</p>
+      </div>
+    </section>
+
+    <section class="ad-slot ad-slot-bottom">
+      <span class="ad-label">ADVERTISEMENT</span>
+      <div class="ad-placeholder"><span>✧</span><div><strong>A second banner placement</strong><small>Only add ads after reviewing the network's content and placement policies.</small></div></div>
+    </section>
+
+    <section id="about" class="about-section">
+      <p class="eyebrow">THE VELVET PROMISE</p><h2>Romance in the <em>imagination.</em></h2>
+      <div class="promise-grid">
+        <div><b>01</b><strong>Fictional by design</strong><p>Every companion is an invented adult character, not a real person.</p></div>
+        <div><b>02</b><strong>Respect comes first</strong><p>Keep it kind, consensual and within the boundaries of the experience.</p></div>
+        <div><b>03</b><strong>Your privacy matters</strong><p>This starter stores chat history only in this browser. The AI provider may process messages when live AI is enabled.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark small">V<span>·</span></span><span>velvet</span></a><div><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><span>© <span id="year"></span> Velvet</span></div><small>For adults 18+. Fictional AI companions. Not affiliated with real people.</small></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
