@@ -13,7 +13,7 @@ $("#year").textContent=new Date().getFullYear();
 
 function renderCards(){
  grid.innerHTML=companions.map(c=>`<article class="character-card ${active?.id===c.id?"active":""}" data-id="${c.id}" tabindex="0" role="button" aria-label="Chat with ${c.name}">
- <div class="portrait" style="--portrait:${c.color}"><span class="portrait-tag">${c.tag}</span><span class="portrait-letter">${c.letter}</span></div>
+ <div class="portrait" style="--portrait:${c.color}"><img src="/images/${c.id}.webp" alt="Portrait of ${c.name}, a fictional adult AI companion" loading="lazy"><span class="portrait-tag">${c.tag}</span></div>
  <div class="card-info"><h3>${c.name}, ${c.age}</h3><p>${c.mood}</p><div class="card-bottom"><span class="trait">${c.trait}</span><span>↗</span></div></div></article>`).join("");
  grid.querySelectorAll(".character-card").forEach(card=>{
   const choose=()=>selectCompanion(card.dataset.id);
