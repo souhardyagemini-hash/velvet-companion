@@ -68,3 +68,5 @@ If the Cloudflare Pages setup asks for a build output directory, use `public`. K
 - [ ] Confirm live AI works before advertising it as an AI chat service.
 - [ ] Add rate limiting and abuse protection before public live-AI launch.
 - [ ] Confirm provider data handling and ad-network eligibility.
+velvet AI config changes
+      
