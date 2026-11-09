@@ -70,4 +70,11 @@ export async function onRequestPost({ request, env }) {
     return Response.json({ error: "Unexpected server error." }, { status: 500 });
   }
 }
-
+export async function onRequestGet({ env }) {
+  return Response.json({
+    ok: true,
+    function: "Velvet chat API",
+    keyConfigured: Boolean(env.OPENROUTER_API_KEY),
+    model: env.AI_MODEL || "openrouter/free"
+  });
+}
